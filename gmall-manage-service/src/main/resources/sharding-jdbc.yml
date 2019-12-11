@@ -1,0 +1,18 @@
+dataSources:
+  db_master: !!com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/gmall_study?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: 123456
+  db_slave: !!com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3307/gmall_study?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: 123456
+masterSlaveRule:
+  name: db_ms
+  masterDataSourceName: db_master
+  slaveDataSourceNames: [db_slave]
+###注意，这份文档直接从官网复制的。!!后面是DataSource的实现类全类名不能省略。
+###多个slave加多份db_slaveXX配置即可，在slaveDataSourceNames列举这些slaver
+

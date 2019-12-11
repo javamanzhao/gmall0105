@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zzhao.gmall.manage.mapper.TestMapper">
+
+    <update id="updateNum">
+         update test SET num=num+1
+         where id=#{id}
+    </update>
+
+    <select id="selectBean" resultType="com.zzhao.gmall.bean.TestBean">
+         select * from test
+         where id  <![CDATA[ < ]]> #{id} lock in share mode
+    </select>
+
+    <insert id="insertBean">
+        insert into test(id) values(#{id})
+    </insert>
+</mapper>

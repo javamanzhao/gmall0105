@@ -1,0 +1,11 @@
+package com.zzhao.gmall.order.mapper;
+
+import com.zzhao.gmall.bean.OmsOrderItem;
+import tk.mybatis.mapper.common.Mapper;
+
+/**
+ * @author Administrator
+ * @date 2019/11/20 0020上午 11:42
+ */
+public interface OmsOrderItemMapper extends Mapper<OmsOrderItem> {
+}
